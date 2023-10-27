@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1668px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+@font-face {
+  font-family: Revalia;
+  src: url("./assets/fonts/sss/Revalia-Regular.ttf");
+}
+
+@font-face {
+  font-family: Saira-Regular;
+  src: url("./assets/fonts/sss/Saira-Regular.ttf");
+}
+
+@font-face {
+  font-family: Saira-Medium;
+  src: url("./assets/fonts/sss/Saira-Medium.ttf");
+}
+
+@font-face {
+  font-family: Rowdies-Bold;
+  src: url("./assets/fonts/sss/Rowdies-Bold.ttf");
+}
