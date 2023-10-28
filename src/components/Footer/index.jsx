@@ -1,11 +1,6 @@
 import "./style.scss";
 
 const index = () => {
-
-  
-
-
-
   return (
     <footer>
       <div className="container">

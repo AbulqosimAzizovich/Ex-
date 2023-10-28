@@ -1,0 +1,570 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+#services {
+  background: linear-gradient(180deg, #dbedff 0%, rgba(219, 237, 255, 0) 100%);
+  height: fit-content;
+
+  .container {
+    .all {
+      width: 100%;
+    }
+
+    .engtepa {
+      width: 100%;
+
+      .tepatexts {
+        margin-top: 20px;
+        text-align: center;
+
+        .services_title {
+          font-weight: 700px;
+          font-size: 48px;
+          margin-bottom: 20px;
+          color: #2aaa94;
+        }
+
+        .service_title {
+          font-weight: 400px;
+          font-size: 25px;
+
+          color: #4e596b;
+        }
+      }
+
+      .ellipse {
+        margin-top: 30px;
+        position: absolute;
+      }
+    }
+
+    .service_cards {
+      display: flex;
+      margin-top: 30px;
+      justify-content: space-between;
+
+      .card1 {
+        overflow: hidden;
+        border-radius: 20px;
+
+        border: 0px 20px !important;
+        height: 571px;
+
+        image:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          transition: box-shadow 0.3s;
+        }
+
+        .texts {
+          padding: 20px;
+          background: #ffff;
+          flex-direction: row;
+
+          &_tepa {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+              // font-family: Saira;
+              font-size: 14px;
+              font-weight: 700;
+
+              letter-spacing: -0.03em;
+              text-align: left;
+              color: #4e596b;
+            }
+
+            h6 {
+              // font-family: Saira;
+              font-size: 14px;
+              font-weight: 500;
+
+              letter-spacing: -0.03em;
+              text-align: left;
+              color: #4e596b;
+            }
+          }
+
+          &_uchd {
+            margin-top: 30px;
+
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 35px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            color: #324361;
+            max-width: 380px;
+          }
+
+          &_pastt {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            h5 {
+              // font-family: Saira;
+              font-size: 22px;
+              font-weight: 700;
+              line-height: 35px;
+              letter-spacing: -0.03em;
+              text-align: left;
+              color: #4e596b;
+            }
+            .korzinka {
+              transition: box-shadow 0.3s;
+            }
+            .korzinka:hover {
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+          }
+        }
+      }
+
+      .card2 {
+        overflow: hidden;
+        border-radius: 20px;
+
+        border-radius: 20px 20px 20px 20px;
+        opacity: calc(25);
+        height: 571px;
+
+        .texts {
+          padding: 20px;
+          background: #ffff;
+          flex-direction: row;
+
+          &_tepa {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+              // font-family: Saira;
+              font-size: 14px;
+              font-weight: 700;
+
+              letter-spacing: -0.03em;
+              text-align: left;
+              color: #4e596b;
+            }
+
+            h6 {
+              // font-family: Saira;
+              font-size: 14px;
+              font-weight: 500;
+
+              letter-spacing: -0.03em;
+              text-align: left;
+              color: #4e596b;
+            }
+          }
+
+          &_uchd {
+            margin-top: 30px;
+
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 35px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            color: #324361;
+            max-width: 380px;
+          }
+
+          &_pastt {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            h5 {
+              // font-family: Saira;
+              font-size: 22px;
+              font-weight: 700;
+              line-height: 35px;
+              letter-spacing: -0.03em;
+              text-align: left;
+              color: #4e596b;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  // Styles for mobile devices (up to 768px)
+  #services {
+    background: linear-gradient(
+      180deg,
+      #dbedff 0%,
+      rgba(219, 237, 255, 0) 100%
+    );
+    height: fit-content;
+
+    .container {
+      .engtepa {
+        width: 100%;
+
+        .ellipse {
+          transform: scale(0.7);
+        }
+
+        .tepatexts {
+          text-align: center;
+
+          .services_title {
+            font-size: 32px;
+            margin-bottom: 10px;
+          }
+
+          .service_title {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .service_cards {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        row-gap: 20px;
+
+        .card1 {
+          height: auto;
+          margin-bottom: 20px;
+
+          .texts {
+            flex-direction: column;
+            max-width: 512px;
+
+            &__tepa {
+              justify-content: space-between;
+
+              p {
+                font-size: 12px;
+              }
+
+              h6 {
+                font-size: 12px;
+              }
+            }
+
+            &__uchd {
+              font-size: 20px;
+              line-height: 28px;
+              width: 100%;
+            }
+
+            &__pastt {
+              flex-wrap: wrap;
+              justify-content: flex-start;
+
+              h5 {
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+
+        .card2 {
+          height: auto;
+          margin-bottom: 20px;
+
+          .texts {
+            flex-direction: column;
+            max-width: 512px;
+
+            &__tepa {
+              justify-content: space-between;
+
+              p {
+                font-size: 12px;
+              }
+
+              h6 {
+                font-size: 12px;
+              }
+            }
+
+            &__uchd {
+              font-size: 20px;
+              line-height: 28px;
+              width: 100%;
+            }
+
+            &__pastt {
+              flex-wrap: wrap;
+              justify-content: flex-start;
+
+              h5 {
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media (min-width: 769px) and (max-width: 1200px)
+// {
+
+//     // Styles for tablet devices (769px to 1200px)
+//     .container
+//     {
+//         .engtepa
+//         {
+//             width: 100%;
+
+//             .tepatexts
+//             {
+//                 text-align: center;
+
+//                 .services_title
+//                 {
+//                     font-size: 32px;
+//                     margin-bottom: 10px;
+//                 }
+
+//                 .service_title
+//                 {
+//                     font-size: 20px;
+//                 }
+//             }
+//         }
+
+//         .service_cards
+//         {
+//             column-gap: 10px;
+//             align-items: center;
+
+//             .card1
+//             {   max-width:500px;
+//                 height: auto;
+//                 margin-bottom: 20px;
+
+//                 .texts
+//                 {
+//                     flex-direction: column;
+//                     max-width: 512px;
+
+//                     &__tepa
+//                     {
+//                         justify-content: space-between;
+
+//                         p
+//                         {
+//                             font-size: 12px;
+//                         }
+
+//                         h6
+//                         {
+//                             font-size: 12px;
+//                         }
+//                     }
+
+//                     &__uchd
+//                     {
+//                         font-size: 20px;
+//                         line-height: 28px;
+//                         width: 100%;
+//                     }
+
+//                     &__pastt
+//                     {
+//                         flex-wrap: wrap;
+//                         justify-content: flex-start;
+
+//                         h5
+//                         {
+//                             font-size: 18px;
+//                             line-height: 28px;
+//                             margin-bottom: 5px;
+//                         }
+//                     }
+//                 }
+//             }
+
+//             .card2
+//             {
+//                 height: auto;
+//                 margin-bottom: 20px;
+
+//                 .texts
+//                 {
+//                     flex-direction: column;
+//                     max-width: 512px;
+
+//                     &__tepa
+//                     {
+//                         justify-content: space-between;
+
+//                         p
+//                         {
+//                             font-size: 12px;
+//                         }
+
+//                         h6
+//                         {
+//                             font-size: 12px;
+//                         }
+//                     }
+
+//                     &__uchd
+//                     {
+//                         font-size: 20px;
+//                         line-height: 28px;
+//                         width: 100%;
+//                     }
+
+//                     &__pastt
+//                     {
+//                         flex-wrap: wrap;
+//                         justify-content: flex-start;
+
+//                         h5
+//                         {
+//                             font-size: 18px;
+//                             line-height: 28px;
+//                             margin-bottom: 5px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+@media (max-width: 576px) {
+  /* Styles for mobile devices (up to 576px) */
+
+  #services {
+    background: linear-gradient(
+      180deg,
+      #dbedff 0%,
+      rgba(219, 237, 255, 0) 100%
+    );
+    height: fit-content;
+
+    .container {
+      .engtepa {
+        width: 100%;
+
+        .ellipse {
+          margin-top: -30px;
+          margin-left: -30px;
+          transform: scale(0.4);
+        }
+
+        .tepatexts {
+          text-align: center;
+
+          .services_title {
+            font-size: 15px;
+            margin-bottom: 10px;
+          }
+
+          .service_title {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .service_cards {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        row-gap: 20px;
+
+        .card1 {
+          height: auto;
+          margin-bottom: 20px;
+          max-width: 300px;
+
+          .texts {
+            flex-direction: column;
+            max-width: 360px;
+
+            &_tepa {
+              p {
+                font-size: 12px;
+              }
+
+              h6 {
+                font-size: 12px;
+              }
+            }
+
+            &_uchd {
+              font-size: 18px;
+            }
+
+            &_pastt {
+              flex-wrap: wrap;
+              justify-content: space-between;
+
+              h5 {
+                font-size: 10px;
+                line-height: 18px;
+                margin-bottom: 5px;
+              }
+
+              .korzinka {
+                transform: scale(0.5);
+              }
+            }
+          }
+        }
+
+        .card2 {
+          height: auto;
+          margin-bottom: 20px;
+          max-width: 300px;
+
+          .texts {
+            flex-direction: column;
+            max-width: 360px;
+
+            &_tepa {
+              p {
+                font-size: 12px;
+              }
+
+              h6 {
+                font-size: 12px;
+              }
+            }
+
+            &_uchd {
+              font-size: 18px;
+            }
+
+            &_pastt {
+              flex-wrap: wrap;
+              justify-content: space-between;
+
+              h5 {
+                font-size: 10px;
+                line-height: 18px;
+                margin-bottom: 5px;
+              }
+
+              .korzinka {
+                transform: scale(0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+header {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 999;
+  top: 0;
+  .navbar {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &_info {
+      display: flex;
+      column-gap: 243px;
+      &_list {
+        display: flex;
+        column-gap: 72px;
+        align-items: center;
+        &_item {
+          font-size: 20px;
+          color: #1b2336;
+        }
+      }
+      button {
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        width: 138px;
+        height: 60px;
+        border-radius: 10px;
+        background: linear-gradient(102deg, #083f9b 0%, #7f56d9 93.39%);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  header {
+    .navbar {
+      &_info {
+        column-gap: 40px;
+        &_list {
+          display: flex;
+          column-gap: 32px;
+          &_item {
+            font-size: 20px;
+            color: #1b2336;
+          }
+        }
+        button {
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  header {
+    .navbar {
+      &_info {
+        column-gap: 20px;
+        &_list {
+          display: flex;
+          column-gap: 20px;
+          &_item {
+            font-size: 20px;
+            color: #1b2336;
+          }
+        }
+        button {
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  header {
+    .navbar {
+      img {
+        height: 50px;
+      }
+      height: 80px;
+      &_info {
+        column-gap: 20px;
+        &_list {
+          display: none;
+          column-gap: 20px;
+          &_item {
+            font-size: 20px;
+            color: #1b2336;
+          }
+        }
+        button {
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    .container {
+      padding: 0px 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  header {
+    .container {
+      padding: 0px 10px;
+    }
+
+    .navbar {
+      button {
+        width: 100px;
+        font-size: 16px;
+      }
+      column-gap: 10px;
+      img {
+        height: 50px;
+      }
+      height: 60px;
+    }
+  }
+}
