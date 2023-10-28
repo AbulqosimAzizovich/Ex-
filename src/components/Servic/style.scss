@@ -42,8 +42,8 @@
     .service_cards {
       display: flex;
       margin-top: 30px;
-      justify-content: space-between;
-
+      // justify-content: space-between;
+      gap: 65px;
       .card1 {
         overflow: hidden;
         border-radius: 20px;
@@ -188,6 +188,17 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1464px) {
+  #services{
+
+    .container{
+      .service_cards{
+        gap: 25px;
       }
     }
   }

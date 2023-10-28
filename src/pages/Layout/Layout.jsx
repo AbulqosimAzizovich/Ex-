@@ -15,7 +15,7 @@ const Layout = () => {
       </header>
       <main>
         {/* <Intro /> */}
-        <Categories />
+        {/* <Categories /> */}
         <Wishes />
         <Video />
         <Service />
