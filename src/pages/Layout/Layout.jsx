@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import Intro from "../../components/Intro";
+import Categories from "../../components/Categories";
 import Wishes from "../../components/Wishes";
 import Video from "../../components/Vsection";
 import Service from "../../components/Servic";
@@ -14,6 +15,7 @@ const Layout = () => {
       </header>
       <main>
         {/* <Intro /> */}
+        <Categories />
         <Wishes />
         <Video />
         <Service />

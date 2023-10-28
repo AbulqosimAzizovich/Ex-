@@ -1,0 +1,109 @@
+@media only screen and (max-width: 768px) {
+  .icon {
+    margin-left: 200px;
+    margin-top: 0;
+  }
+
+  .flex {
+    flex-wrap: wrap;
+    .card {
+      width: 220px;
+      height: 342px;
+      img {
+        margin-left: 65px;
+      }
+      h2 {
+        margin-left: 50px;
+      }
+    }
+    .card2 {
+      width: 220px;
+      height: 342px;
+      img {
+        margin-left: 65px;
+      }
+      h2 {
+        margin-left: 35px;
+      }
+    }
+    .card3 {
+      width: 220px;
+      height: 342px;
+      img {
+        margin-left: 65px;
+      }
+      h2 {
+        margin-left: 45px;
+      }
+    }
+    .card4 {
+      width: 220px;
+      height: 342px;
+      img {
+        margin-left: 65px;
+      }
+      h2 {
+        margin-left: 35px;
+      }
+    }
+    .card5 {
+      width: 220px;
+      height: 342px;
+      img {
+        margin-left: 65px;
+      }
+      h2 {
+        margin-left: 60px;
+      }
+    }
+    .card6 {
+      width: 220px;
+      height: 342px;
+      img {
+        margin-left: 65px;
+      }
+      h2 {
+        margin-left: 60px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 430px) {
+  .icon {
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 0;
+  }
+  .tepa {
+    width: 350px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .icon {
+    width: 350px;
+    margin-left: 5px;
+    margin-top: 0;
+  }
+  .tepa {
+    width: 350px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .icon {
+    width: 300px;
+    margin-left: 20px;
+    margin-top: 0;
+  }
+  .tepa {
+    width: 350px;
+    font-size: 14px;
+  }
+
+  .flex {
+    margin-top: 40px;
+  }
+}
