@@ -17,11 +17,14 @@ header {
         column-gap: 72px;
         align-items: center;
         &_item {
+          font-weight: 500;
+          font-family: Saira-Medium;
           font-size: 20px;
           color: #1b2336;
         }
       }
       button {
+        font-family: Saira-Medium;
         color: white;
         font-size: 20px;
         cursor: pointer;

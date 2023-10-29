@@ -1,0 +1,582 @@
+.learnsection {
+  background: linear-gradient(
+    72deg,
+    rgba(8, 79, 199, 0.9) 26.49%,
+    rgba(127, 86, 217, 0.9) 85.53%
+  );
+  min-height: 779px;
+  height: auto;
+  padding-top: 113px;
+  &-wrapper {
+    position: relative;
+    .learnBlur {
+      position: absolute;
+      border-radius: 351px;
+      background: #3e96ee;
+      filter: blur(150px);
+      width: 351px;
+      height: 351px;
+      top: 165px;
+      left: -160px;
+    }
+    .learnImg {
+      position: absolute;
+      top: 103px;
+      left: -151px;
+    }
+    .learnsection-wrapper-h2 {
+      text-align: center;
+      color: #fff;
+      font-family: Rowdies-Bold;
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 29px;
+      .h2-span {
+        color: #4be5ca;
+      }
+    }
+    .learnsection-wrapper-p {
+      max-width: 728px;
+      width: 100%;
+      margin: 0 auto;
+      color: #fff;
+      text-align: center;
+      font-family: Saira-Regular;
+      font-size: 25px;
+      line-height: 35px;
+    }
+    .learncardswrapper {
+      max-width: 1367px;
+      width: 100%;
+      max-height: 248px;
+      height: 100%;
+      flex-shrink: 0;
+      margin: 115px auto;
+      display: flex;
+      align-items: center;
+      .learnCardOne {
+        width: 331px;
+        height: 245px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .learnCardOne-h3 {
+          color: #fff;
+          text-align: center;
+          font-family: Rowdies-Bold;
+          font-size: 25px;
+          line-height: 32.64px;
+          margin-top: 36px;
+          margin-bottom: 29px;
+        }
+        .learnCardOne-p {
+          color: #fff;
+          text-align: center;
+          font-family: Saira-Regular;
+          font-size: 18px;
+          line-height: 27px;
+          display: flex;
+        }
+      }
+      .learnCardTwo {
+        width: 517px;
+        height: 245px;
+        padding: 0 93px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 93px;
+        border-width: 2px;
+        border-style: dashed;
+        border-image: linear-gradient(
+            to bottom,
+            white 50%,
+            rgba(255, 255, 255, 0)
+          )
+          1 100%;
+        .learnCardTwo-h3 {
+          color: #fff;
+          text-align: center;
+          font-family: Rowdies-Bold;
+          font-size: 25px;
+          line-height: 32.64px;
+          margin-top: 36px;
+          margin-bottom: 29px;
+        }
+        .learnCardTwo-p {
+          color: #fff;
+          text-align: center;
+          font-family: Saira-Regular;
+          font-size: 18px;
+          line-height: 27px;
+          display: flex;
+        }
+      }
+      .learnCardThree {
+        width: 331px;
+        height: 245px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .learnCardThree-h3 {
+          color: #fff;
+          text-align: center;
+          font-family: Rowdies-Bold;
+          font-size: 25px;
+          line-height: 32.64px;
+          margin-top: 36px;
+          margin-bottom: 29px;
+        }
+        .learnCardThree-p {
+          color: #fff;
+          text-align: center;
+          font-family: Saira-Regular;
+          font-size: 18px;
+          line-height: 27px;
+          display: flex;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1430px) {
+  .learnsection {
+    padding-top: 100px;
+    &-wrapper {
+      .learnBlur {
+        width: 320px;
+        height: 320px;
+        top: 145px;
+      }
+      .learnImg {
+        width: 230px;
+        height: 230px;
+        top: 95px;
+      }
+      .learnsection-wrapper-h2 {
+        font-size: 43px;
+        line-height: 48px;
+        margin-bottom: 27px;
+        .h2-span {
+        }
+      }
+      .learnsection-wrapper-p {
+        font-size: 24px;
+        line-height: 33px;
+      }
+      .learncardswrapper {
+        max-width: 1367px;
+        width: 100%;
+        max-height: 248px;
+        height: 100%;
+        flex-shrink: 0;
+        margin: 115px auto;
+        display: flex;
+        align-items: center;
+        .learnCardOne {
+          width: 331px;
+          height: 245px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .learnCardOne-h3 {
+            color: #fff;
+            text-align: center;
+            font-family: Rowdies-Bold;
+            font-size: 25px;
+            line-height: 32.64px;
+            margin-top: 36px;
+            margin-bottom: 29px;
+          }
+          .learnCardOne-p {
+            color: #fff;
+            text-align: center;
+            font-family: Saira-Regular;
+            font-size: 18px;
+            line-height: 27px;
+            display: flex;
+          }
+        }
+        .learnCardTwo {
+          width: 517px;
+          height: 245px;
+          padding: 0 93px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 0 93px;
+          border-width: 2px;
+          border-style: dashed;
+          border-image: linear-gradient(
+              to bottom,
+              white 50%,
+              rgba(255, 255, 255, 0)
+            )
+            1 100%;
+          .learnCardTwo-h3 {
+            color: #fff;
+            text-align: center;
+            font-family: Rowdies-Bold;
+            font-size: 25px;
+            line-height: 32.64px;
+            margin-top: 36px;
+            margin-bottom: 29px;
+          }
+          .learnCardTwo-p {
+            color: #fff;
+            text-align: center;
+            font-family: Saira-Regular;
+            font-size: 18px;
+            line-height: 27px;
+            display: flex;
+          }
+        }
+        .learnCardThree {
+          width: 331px;
+          height: 245px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .learnCardThree-h3 {
+            color: #fff;
+            text-align: center;
+            font-family: Rowdies-Bold;
+            font-size: 25px;
+            line-height: 32.64px;
+            margin-top: 36px;
+            margin-bottom: 29px;
+          }
+          .learnCardThree-p {
+            color: #fff;
+            text-align: center;
+            font-family: Saira-Regular;
+            font-size: 18px;
+            line-height: 27px;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 973px) {
+  .learnsection {
+    padding-top: 80px;
+    &-wrapper {
+      .learnBlur {
+        width: 300px;
+        height: 300px;
+        top: 135px;
+      }
+      .learnImg {
+        width: 210px;
+        height: 210px;
+        top: 85px;
+      }
+      .learnsection-wrapper-h2 {
+        font-size: 39px;
+        margin-bottom: 26px;
+        .h2-span {
+        }
+      }
+      .learnsection-wrapper-p {
+        font-size: 22px;
+        line-height: 33px;
+      }
+      .learncardswrapper {
+        margin: 100px auto;
+        display: flex;
+        align-items: center;
+        .learnCardOne {
+          .learnCardOne-h3 {
+            font-size: 22px;
+            margin-top: 33px;
+            margin-bottom: 26px;
+          }
+          .learnCardOne-p {
+            font-size: 16px;
+            line-height: 25px;
+          }
+        }
+        .learnCardTwo {
+          width: 490px;
+          padding: 0 74px;
+          margin: 0 74px;
+          .learnCardTwo-h3 {
+            font-size: 22px;
+            margin-top: 33px;
+            margin-bottom: 26px;
+          }
+          .learnCardTwo-p {
+            font-size: 16px;
+            line-height: 25px;
+          }
+        }
+        .learnCardThree {
+          .learnCardThree-h3 {
+            font-size: 22px;
+            margin-top: 33px;
+            margin-bottom: 26px;
+          }
+          .learnCardThree-p {
+            font-size: 16px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 810px) {
+  .learnsection {
+    padding-top: 75px;
+    min-height: 689px;
+    &-wrapper {
+      .learnBlur {
+        width: 250px;
+        height: 250px;
+        top: 95px;
+      }
+      .learnImg {
+        width: 190px;
+        height: 190px;
+        top: 75px;
+      }
+      .learnsection-wrapper-h2 {
+        font-size: 36px;
+        margin-bottom: 25px;
+        .h2-span {
+        }
+      }
+      .learnsection-wrapper-p {
+        font-size: 20px;
+        line-height: 31px;
+      }
+      .learncardswrapper {
+        margin: 90px auto;
+        .learnCardOne {
+          .learnCardOne-h3 {
+            font-size: 20px;
+            margin-top: 31px;
+            margin-bottom: 25px;
+          }
+          .learnCardOne-p {
+            font-size: 14px;
+            line-height: 25px;
+          }
+        }
+        .learnCardTwo {
+          width: 440px;
+          padding: 0 55px;
+          margin: 0 55px;
+          .learnCardTwo-h3 {
+            font-size: 20px;
+            margin-top: 31px;
+            margin-bottom: 25px;
+          }
+          .learnCardTwo-p {
+            font-size: 14px;
+            line-height: 25px;
+          }
+        }
+        .learnCardThree {
+          .learnCardThree-h3 {
+            font-size: 20px;
+            margin-top: 31px;
+            margin-bottom: 25px;
+          }
+          .learnCardThree-p {
+            font-size: 14px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 720px) {
+  .learnsection {
+    padding-top: 68px;
+    min-height: 649px;
+    &-wrapper {
+      .learnBlur {
+        width: 220px;
+        height: 220px;
+        top: 75px;
+      }
+      .learnImg {
+        width: 190px;
+        height: 190px;
+        top: 55px;
+      }
+      .learnsection-wrapper-h2 {
+        font-size: 33px;
+        margin-bottom: 24px;
+        .h2-span {
+        }
+      }
+      .learnsection-wrapper-p {
+        font-size: 18px;
+        line-height: 30px;
+      }
+      .learncardswrapper {
+        margin: 80px auto;
+        .learnCardOne {
+          .learnCardOne-h3 {
+            font-size: 19px;
+            margin-top: 28px;
+            margin-bottom: 22px;
+          }
+          .learnCardOne-p {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+        .learnCardTwo {
+          width: 440px;
+          padding: 0 55px;
+          margin: 0 55px;
+          .learnCardTwo-h3 {
+            font-size: 19px;
+            margin-top: 28px;
+            margin-bottom: 22px;
+          }
+          .learnCardTwo-p {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+        .learnCardThree {
+          .learnCardThree-h3 {
+            font-size: 19px;
+            margin-top: 28px;
+            margin-bottom: 22px;
+          }
+          .learnCardThree-p {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 663px) {
+  .learnsection {
+    padding-top: 68px;
+    min-height: 1049px;
+    &-wrapper {
+      .learnBlur {
+        width: 220px;
+        height: 220px;
+        top: 50px;
+      }
+      .learnImg {
+        width: 190px;
+        height: 190px;
+        top: 55px;
+      }
+      .learnsection-wrapper-h2 {
+        font-size: 31px;
+        margin-bottom: 23px;
+        .h2-span {
+        }
+      }
+      .learnsection-wrapper-p {
+        font-size: 17px;
+        line-height: 30px;
+      }
+      .learncardswrapper {
+        margin: 70px auto;
+        flex-direction: column;
+        row-gap: 20px;
+        .learnCardOne {
+          background-color: #ffffff2b;
+          border-radius: 12px;
+          padding: 10px;
+          max-width: 500px;
+          width: 100%;
+
+          .learnCardOne-h3 {
+            font-size: 18px;
+            margin-top: 28px;
+            margin-bottom: 22px;
+          }
+          .learnCardOne-p {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+        .learnCardTwo {
+          width: 440px;
+          padding: 0 55px;
+          margin: 0 55px;
+          flex-direction: column;
+          border-width: 0px;
+          background-color: #ffffff2b;
+          border-radius: 12px;
+          padding: 10px;
+          max-width: 500px;
+          width: 100%;
+          .learnCardTwo-h3 {
+            font-size: 19px;
+            margin-top: 28px;
+            margin-bottom: 22px;
+          }
+          .learnCardTwo-p {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+        .learnCardThree {
+          background-color: #ffffff2b;
+          border-radius: 12px;
+          padding: 10px;
+          max-width: 500px;
+          width: 100%;
+          .learnCardThree-h3 {
+            font-size: 19px;
+            margin-top: 28px;
+            margin-bottom: 22px;
+          }
+          .learnCardThree-p {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 522px) {
+  .learnsection {
+    padding-top: 58px;
+    min-height: 1079px;
+  }
+}
+@media only screen and (max-width: 477px) {
+  .learnsection {
+    padding-top: 58px;
+    min-height: 1109px;
+  }
+}
+@media only screen and (max-width: 384px) {
+  .learnsection {
+    padding-top: 58px;
+    min-height: 1129px;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .learnsection {
+    padding-top: 58px;
+    min-height: 1159px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .learnsection {
+    padding-top: 58px;
+    min-height: 1209px;
+  }
+}

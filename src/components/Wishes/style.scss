@@ -20,7 +20,7 @@
           margin-bottom: 52px;
           .first {
             color: #1d1d45;
-            font-family: Rowdies Bold;
+            font-family: Rowdies-Bold;
             font-size: 45px;
             font-style: normal;
             font-weight: 700;
@@ -28,7 +28,7 @@
           }
           .second {
             color: #2aaa94;
-            font-family: Rowdies Bold;
+            font-family: Rowdies-Bold;
             font-size: 45px;
             font-style: normal;
             font-weight: 700;
@@ -37,7 +37,7 @@
         }
         p {
           color: #4e596b;
-          font-family: Saira;
+          font-family: Saira-Regular;
           font-size: 18px;
           font-style: normal;
           font-weight: 400;
@@ -51,6 +51,12 @@
           background: linear-gradient(95deg, #083f9b 0%, #7f56d9 102.25%);
           color: #fff;
           margin-top: 48px;
+          color: #fff;
+          font-family: Saira-Medium;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 28px;
         }
 
         img {

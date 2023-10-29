@@ -42,6 +42,16 @@ body {
 }
 
 @font-face {
+  font-family: Saira-Bold;
+  src: url("./assets/fonts/sss/Saira-Bold.ttf");
+}
+
+@font-face {
   font-family: Rowdies-Bold;
   src: url("./assets/fonts/sss/Rowdies-Bold.ttf");
+}
+
+@font-face {
+  font-family: Inter-Medium;
+  src: url("./assets/fonts/sss/Inter-Medium.ttf");
 }

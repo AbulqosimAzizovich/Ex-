@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
+import Learn from "../../components/Learn";
 import Intro from "../../components/Intro";
 import Categories from "../../components/Categories";
 import Wishes from "../../components/Wishes";
@@ -14,6 +15,7 @@ const Layout = () => {
         <Header />
       </header>
       <main>
+        <Learn />
         {/* <Intro /> */}
         {/* <Categories /> */}
         <Wishes />
