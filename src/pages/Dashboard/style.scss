@@ -1,0 +1,303 @@
+.ssss {
+  overflow: hidden;
+}
+
+.head {
+  -webkit-box-shadow: 0px 18px 9px -7px rgba(34, 60, 80, 0.17);
+  -moz-box-shadow: 0px 18px 9px -7px rgba(34, 60, 80, 0.17);
+  box-shadow: 0px 18px 9px -7px rgba(34, 60, 80, 0.17);
+  a {
+    color: #000;
+    font-family: Rowdies-Bold;
+    font-size: 48px;
+  }
+
+  .login {
+    button {
+      padding: 4px;
+
+      &:hover {
+        background: #00000031;
+        border-radius: 15px;
+      }
+    }
+
+    .user {
+      padding: 4px;
+      cursor: pointer;
+    }
+  }
+}
+
+.down {
+  display: flex;
+  align-items: self-start;
+  margin-top: 80px;
+  gap: 30px;
+
+  background: rgba(255, 255, 255, 0.11);
+  .sidebar {
+    padding: 40px 2px;
+    width: 300px;
+    -webkit-box-shadow: 18px 0px 9px -7px rgba(34, 60, 80, 0.17);
+    -moz-box-shadow: 18px 0px 9px -7px rgba(34, 60, 80, 0.17);
+    box-shadow: 18px 0px 9px -7px rgba(34, 60, 80, 0.17);
+    height: 91vh;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          background: #1313132c;
+          height: 40px;
+          width: 100%;
+          padding: 4px 12px;
+          border-radius: 15px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          p {
+            color: #1b2336;
+            font-family: Saira-Medium;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 26px;
+            text-transform: capitalize;
+          }
+
+          &:focus {
+            background: #000000ea;
+            p {
+              color: #fff;
+            }
+
+            i {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    margin: 40px auto;
+    width: 100%;
+    background: #000000;
+    height: 80vh;
+    padding: 15px;
+    .d-cards {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      .d-card {
+        width: 370px;
+        height: 220px;
+        background: #fff;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.4s ease-in;
+        &:hover {
+          -webkit-box-shadow: 0px 0px 40px 12px rgba(255, 255, 255, 0.13);
+          -moz-box-shadow: 0px 0px 40px 12px rgba(255, 255, 255, 0.13);
+          box-shadow: 0px 0px 40px 12px rgba(255, 255, 255, 0.17);
+        }
+      }
+
+      .count {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+
+      .card1 {
+        padding: 0 20px;
+        h3 {
+          color: #00e1ff;
+          font-family: Saira-Bold;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: -1.35px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+        }
+
+        i {
+          font-size: 54px;
+          color: #00e1ff;
+          font-family: Saira-Bold;
+        }
+
+        p {
+          font-size: 54px;
+          color: #00e1ff;
+          font-family: Saira-Bold;
+        }
+      }
+
+      .card2 {
+        padding: 0 20px;
+        h3 {
+          color: #ffe600;
+          font-family: Saira-Bold;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: -1.35px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+        }
+
+        i {
+          font-size: 54px;
+          color: #ffe600;
+          font-family: Saira-Bold;
+        }
+
+        p {
+          font-size: 54px;
+          color: #ffe600;
+          font-family: Saira-Bold;
+        }
+      }
+
+      .card3 {
+        padding: 0 20px;
+        h3 {
+          color: #026d22;
+          font-family: Saira-Bold;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: -1.35px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+        }
+
+        i {
+          font-size: 54px;
+          color: #026d22;
+          font-family: Saira-Bold;
+        }
+
+        p {
+          font-size: 54px;
+          color: #026d22;
+          font-family: Saira-Bold;
+        }
+      }
+
+      .card4 {
+        padding: 0 20px;
+        h3 {
+          color: #860606;
+          font-family: Saira-Bold;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: -1.35px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+        }
+
+        i {
+          font-size: 54px;
+          color: #860606;
+          font-family: Saira-Bold;
+        }
+
+        p {
+          font-size: 54px;
+          color: #860606;
+          font-family: Saira-Bold;
+        }
+      }
+
+      .card5 {
+        padding: 0 20px;
+        h3 {
+          color: #0004ff;
+          font-family: Saira-Bold;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: -1.35px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+        }
+
+        i {
+          font-size: 54px;
+          color: #0004ff;
+          font-family: Saira-Bold;
+        }
+
+        p {
+          font-size: 54px;
+          color: #0004ff;
+          font-family: Saira-Bold;
+        }
+      }
+
+      .card6 {
+        padding: 0 20px;
+        h3 {
+          color: #6d6d6d;
+          font-family: Saira-Bold;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: -1.35px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+        }
+
+        i {
+          font-size: 54px;
+          color: #6d6d6d;
+          font-family: Saira-Bold;
+        }
+
+        p {
+          font-size: 54px;
+          color: #6d6d6d;
+          font-family: Saira-Bold;
+        }
+      }
+
+      .card7 {
+        padding: 0 20px;
+        h3 {
+          color: #0004ff;
+          font-family: Saira-Bold;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: -1.35px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+        }
+
+        i {
+          font-size: 54px;
+          color: #0004ff;
+          font-family: Saira-Bold;
+        }
+
+        p {
+          font-size: 54px;
+          color: #0004ff;
+          font-family: Saira-Bold;
+        }
+      }
+    }
+  }
+}
