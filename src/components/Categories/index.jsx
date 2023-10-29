@@ -20,20 +20,20 @@ const index = () => {
           12,000+ unique online course list designs
         </p>
         <div className="flex">
-          <div className="card w-[253px] h-[362px] inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
+          <div className="card2 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px]d hover:shadow-xl">
             <img
               src={img1}
               alt="img"
               className="mt-[37px] mb-[50px] mx-[82px]"
             />
-            <h2 className="text-[#324361] text-[25px] font-semibold max-w-[120px] text-center mb-[45px] mx-[65px]">
+            <h2 className="text-[#324361] text-[25px] font-semibold max-w-[155px] text-center mb-[45px] mx-[49px]">
               Digtal Marketing
             </h2>
-            <p className="text-center text-[#4F547B] text-[18px] font-medium ">
-              25 Courses
+            <p className="text-center text-[#4F547B] text-[18px] font-medium">
+              16 Courses
             </p>
           </div>
-          <div className="card2 w-[253px] h-[362px] inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
+          <div className="card2 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
             <img
               src={img2}
               alt="img"
@@ -46,7 +46,7 @@ const index = () => {
               16 Courses
             </p>
           </div>
-          <div className="card3 w-[253px] h-[362px] inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
+          <div className="card3 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
             <img
               src={img3}
               alt="img"
@@ -59,7 +59,7 @@ const index = () => {
               76 Courses
             </p>
           </div>
-          <div className="card4 w-[253px] h-[362px] inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
+          <div className="card4 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
             <img
               src={img4}
               alt="img"
@@ -72,7 +72,7 @@ const index = () => {
               22 Courses
             </p>
           </div>
-          <div className="card5 w-[253px] h-[362px] inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
+          <div className="card5 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
             <img
               src={img5}
               alt="img"
@@ -85,7 +85,7 @@ const index = () => {
               110 Courses
             </p>
           </div>
-          <div className="card6 w-[253px] h-[362px] inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
+          <div className="card6 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
             <img
               src={img6}
               alt="img"

@@ -12,14 +12,12 @@ import Footer from "../../components/Footer";
 const Layout = () => {
   return (
     <div>
-      <header>
-        {/* <Header /> */}
-      </header>
+      <header>{/* <Header /> */}</header>
       <main>
         <Courses />
         <Learn />
         {/* <Intro /> */}
-        {/* <Categories /> */}
+        <Categories />
         <Wishes />
         <Video />
         <Service />
