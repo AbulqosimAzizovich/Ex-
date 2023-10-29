@@ -52,6 +52,11 @@ body {
 }
 
 @font-face {
+  font-family: Saira-Semibold;
+  src: url("./assets/fonts/sss/Saira-SemiBold.ttf");
+}
+
+@font-face {
   font-family: Inter-Medium;
   src: url("./assets/fonts/sss/Inter-Medium.ttf");
 }

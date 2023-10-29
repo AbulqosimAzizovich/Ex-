@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
+import Courses from "../../components/Courses";
 import Learn from "../../components/Learn";
 import Intro from "../../components/Intro";
 import Categories from "../../components/Categories";
@@ -12,9 +13,10 @@ const Layout = () => {
   return (
     <div>
       <header>
-        <Header />
+        {/* <Header /> */}
       </header>
       <main>
+        <Courses />
         <Learn />
         {/* <Intro /> */}
         {/* <Categories /> */}

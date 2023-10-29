@@ -3,26 +3,26 @@ import logo from "../../assets/icons/logo.svg";
 const index = () => {
   return (
     <header>
-      <div class="container">
-        <nav class="navbar">
+      <div className="container">
+        <nav className="navbar">
           <a href="#">
             <img src={logo} alt="" />
           </a>
 
-          <div class="navbar_info">
-            <ul class="navbar_info_list">
+          <div className="navbar_info">
+            <ul className="navbar_info_list">
               <li>
-                <a href="#" class="navbar_info_list_item">
+                <a href="#" className="navbar_info_list_item">
                   Courses
                 </a>
               </li>
               <li>
-                <a href="#" class="navbar_info_list_item">
+                <a href="#" className="navbar_info_list_item">
                   Services
                 </a>
               </li>
             </ul>
-            <button class="">Join</button>
+            <button className="">Join</button>
           </div>
         </nav>
       </div>

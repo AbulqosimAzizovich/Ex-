@@ -1,0 +1,42 @@
+.course {
+  background: linear-gradient(
+    180deg,
+    #d9ecff 0%,
+    rgba(240, 243, 255, 0) 127.78%
+  );
+  .course__wrapper {
+    .cousrce__title {
+      color: #323232;
+      font-family: Rowdies-Bold;
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 70px;
+      letter-spacing: -1.35px;
+      text-align: center;
+      span {
+        color: #2aaa94;
+      }
+    }
+
+    .course__about {
+      color: #4e596b;
+      text-align: center;
+      font-family: Saira-Regular;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 35px;
+      margin-top: 48px;
+      margin-bottom: 94px;
+    }
+
+    .course__cards {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 46px;
+    }
+  }
+}
