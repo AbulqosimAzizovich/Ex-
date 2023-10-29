@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./../UI/Card/Card";
-import './style.scss'
+import "./style.scss";
 const index = () => {
   return (
     <div className="course">
@@ -11,8 +11,8 @@ const index = () => {
             Featured <span>Course</span>
           </h1>
           <p className="course__about">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br /> do
-            eiusmod temporidunt ut labore veniam...
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br />{" "}
+            do eiusmod temporidunt ut labore veniam...
           </p>
 
           <div className="course__cards">
