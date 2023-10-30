@@ -1,12 +1,25 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { Breadcrumb } from "antd";
 import "./style.scss";
 
 const index = () => {
   return (
     <>
       <div className="ssss1">
-        <div className="main__up">ss</div>
+        <div className="main__up">
+          <Breadcrumb
+            items={[
+              {
+                title: (
+                  <Link to="/dashboard" className="text-[#000] ">
+                    Bosh sahifa{" "}
+                  </Link>
+                ),
+              },
+            ]}
+          />
+        </div>
         <div className="down1 ">
           <div className="d-cards">
             <div className="d-card card1">
