@@ -8,7 +8,7 @@ import najotTalim from "../../assets/icons/najot-talim.svg";
 import logitech from "../../assets/icons/logitech.svg";
 import uzum from "../../assets/icons/uzum.svg";
 
-import "./style.scss"
+import "./style.scss";
 
 const Header = () => {
   return (
@@ -39,13 +39,15 @@ const Header = () => {
               </div>
               <div className="box-right">
                 <div className="box-img">
-                  <img
-                    className="w-[591px] h-[769px]"
-                    src={hacker}
-                    alt="hackerImg"
-                  />
-                  <img src={reactLogo} alt="logo" />
-                  <img src={vue} alt="logo" />
+                  <div>
+                    <img src={hacker} alt="hackerImg" />
+                  </div>
+                  <div>
+                    <img src={reactLogo} alt="logo" />
+                  </div>
+                  <div>
+                    <img src={vue} alt="logo" />
+                  </div>
                 </div>
               </div>
             </div>
