@@ -1,48 +1,51 @@
-import React from "react";
-import { Breadcrumb, Space, Table, Tag } from "antd";
+import React, { useState } from "react";
+import { Breadcrumb, Space, Table, Tag, Modal, Select } from "antd";
 import { Link } from "react-router-dom";
 import "./style.scss";
 
-const columns = [
-  {
-    title: "#",
-    dataIndex: "number",
-    key: "number",
-  },
-  {
-    title: "F.I.Sh",
-    dataIndex: "fish",
-    key: "fish",
-  },
-  {
-    title: "Telefon",
-    dataIndex: "telefon",
-    key: "telefon",
-  },
-  {
-    title: "Kurs",
-    dataIndex: "kurs",
-    key: "kurs",
-  },
-  {
-    title: "Ro'yxatdan o'tgan vaqt",
-    dataIndex: "register",
-    key: "register",
-  },
-  {
-    title: "Holat",
-    dataIndex: "holat",
-    key: "x",
-    render: () => <a>Active</a>,
-  },
-  {
-    title: "Tahrirlash",
-    dataIndex: "",
-    key: "x",
-    render: () => <a>Edit</a>,
-  },
-];
+// const columns = [
+//   {
+//     title: "#",
+//     dataIndex: "number",
+//     key: "number",
+//   },
+//   {
+//     title: "F.I.Sh",
+//     dataIndex: "fish",
+//     key: "fish",
+//   },
+//   {
+//     title: "Telefon",
+//     dataIndex: "telefon",
+//     key: "telefon",
+//   },
+//   {
+//     title: "Kurs",
+//     dataIndex: "kurs",
+//     key: "kurs",
+//   },
+//   {
+//     title: "Ro'yxatdan o'tgan vaqt",
+//     dataIndex: "register",
+//     key: "register",
+//   },
+//   {
+//     title: "Holat",
+//     dataIndex: "holat",
+//     key: "x",
+//     render: () => <a>Active</a>,
+//   },
+//   {
+//     title: "Tahrirlash",
+//     dataIndex: "",
+//     key: "x",
+//     render: () => <a onClick={showModal}>Edit</a>,
+//   },
+// ];
 
+const handleChange = (value) => {
+  console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
+};
 const data = [
   {
     key: 1,
@@ -79,6 +82,56 @@ const data = [
 ];
 
 const index = () => {
+  const columns = [
+    {
+      title: "#",
+      dataIndex: "number",
+      key: "number",
+    },
+    {
+      title: "F.I.Sh",
+      dataIndex: "fish",
+      key: "fish",
+    },
+    {
+      title: "Telefon",
+      dataIndex: "telefon",
+      key: "telefon",
+    },
+    {
+      title: "Kurs",
+      dataIndex: "kurs",
+      key: "kurs",
+    },
+    {
+      title: "Ro'yxatdan o'tgan vaqt",
+      dataIndex: "register",
+      key: "register",
+    },
+    {
+      title: "Holat",
+      dataIndex: "holat",
+      key: "x",
+      render: () => <a>Active</a>,
+    },
+    {
+      title: "Tahrirlash",
+      dataIndex: "",
+      key: "x",
+      render: () => <a onClick={showModal}>Edit</a>,
+    },
+  ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="std">
       <div className="main__up">
@@ -105,6 +158,41 @@ const index = () => {
       <div className="table">
         <Table columns={columns} dataSource={data} />
       </div>
+
+      <Modal
+        title="O'quvchi Statusini o'zgartirish"
+        open={isModalOpen}
+        onCancel={handleCancel}
+      >
+        <h1 className="text-[#323a85] text-[24px] font-semibold my-5 border-t-[1px] border-[#0000001c]">
+          Holatni tanlang
+        </h1>
+
+        <Select
+          labelInValue
+          defaultValue={{
+            value: "tanlang",
+            label: "Tanlang",
+          }}
+          style={{
+            width: "100%",
+          }}
+          onChange={handleChange}
+          options={[
+            {
+              value: "o'qiydi",
+              label: "O'qiydi",
+            },
+            {
+              value: "o'qimaydi",
+              label: "O'qimaydi",
+            },
+          ]}
+        />
+        <button className="p-2 text-[32px] rounded-md" onClick={() => handleOk()}>
+          <i className="bx bxs-save text-[#286b28]"></i>
+        </button>
+      </Modal>
     </div>
   );
 };

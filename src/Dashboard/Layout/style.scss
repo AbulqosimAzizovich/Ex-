@@ -96,3 +96,28 @@
     color: #fff !important;
   }
 }
+
+
+
+.ant-btn-default {
+  background: #ff0000;
+  color: #fff !important;
+  &:hover {
+    color: #000 !important;
+
+    border: 1px solid #000 !important;
+  }
+}
+
+.ant-btn-dashed {
+  background: #0059ff;
+  color: #fff;
+
+  &:active {
+    color: #fff !important;
+  }
+
+  &:hover {
+    color: #ffffff83 !important;
+  }
+}

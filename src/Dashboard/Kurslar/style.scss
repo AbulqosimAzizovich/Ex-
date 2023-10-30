@@ -1,0 +1,17 @@
+.courses {
+  overflow: hidden;
+  padding: 10px 15px;
+  .main__up2 {
+    background: #ffffff;
+    margin: 30px auto;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.ant-input {
+  width: 100% !important;
+}
