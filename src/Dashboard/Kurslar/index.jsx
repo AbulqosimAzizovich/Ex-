@@ -1,37 +1,9 @@
 import React, { useState } from "react";
-import { UploadOutlined } from "@ant-design/icons";
-import {
-  Breadcrumb,
-  Table,
-  Button,
-  Space,
-  Input,
-  Modal,
-  Form,
-  message,
-  Upload,
-} from "antd";
+import { Table, Button, Space, Input, Modal, Form, Breadcrumb } from "antd";
+import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
+import moment from "moment";
 import "./style.scss";
-
-
-const props = {
-  name: "file",
-  action: "https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188",
-  headers: {
-    authorization: "authorization-text",
-  },
-  onChange(info) {
-    if (info.file.status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (info.file.status === "done") {
-      message.success(`${info.file.name} file uploaded successfully`);
-    } else if (info.file.status === "error") {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-};
 
 const index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,37 +17,58 @@ const index = () => {
     setIsModalOpen(false);
   };
   const [data, setData] = useState([]);
+  const [order, setOrder] = useState("");
+  const [about, setAbout] = useState("");
   const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [phone, setPhone] = useState("");
+  const [imageLink, setimageLink] = useState("");
   const [editingRecord, setEditingRecord] = useState(null);
   const [editModalVisible, setEditModalVisible] = useState(false);
 
   const handleAdd = () => {
-    const newData = [...data, { name, surname, phone }];
+    const newData = [
+      ...data,
+      {
+        order,
+        about,
+        name,
+        imageLink,
+        time: moment().format("YYYY-MM-DD HH:mm:ss"),
+      },
+    ];
     setData(newData);
+    setOrder("");
+    setAbout("");
     setName("");
-    setSurname("");
-    setPhone("");
+    setimageLink("");
   };
 
   const handleEdit = (record) => {
     setEditingRecord(record);
+    setOrder(record.order);
+    setAbout(record.about);
     setName(record.name);
-    setSurname(record.surname);
-    setPhone(record.phone);
+    setimageLink(record.imageLink);
     setEditModalVisible(true);
   };
 
   const handleSave = () => {
     const updatedData = data.map((item) =>
-      item === editingRecord ? { ...item, name, surname, phone } : item
+      item === editingRecord
+        ? {
+            ...item,
+            order,
+            about,
+            name,
+            imageLink,
+          }
+        : item
     );
     setData(updatedData);
     setEditingRecord(null);
+    setOrder("");
+    setAbout("");
     setName("");
-    setSurname("");
-    setPhone("");
+    setimageLink("");
     setEditModalVisible(false);
   };
 
@@ -86,22 +79,33 @@ const index = () => {
 
   const columns = [
     {
-      title: "Name",
+      title: "#",
+      dataIndex: "order",
+      key: "order",
+    },
+    {
+      title: "Kurs Id",
+      dataIndex: "",
+      key: "",
+      render: (_, record) => <p>{uuidv4()} </p>,
+    },
+    {
+      title: "Kurs nomi",
       dataIndex: "name",
       key: "name",
     },
     {
-      title: "Surname",
-      dataIndex: "surname",
-      key: "surname",
+      title: "O'quvchilar soni",
+      dataIndex: "",
+      key: "",
     },
     {
-      title: "Phone Number",
-      dataIndex: "phone",
-      key: "phone",
+      title: "Yaratilgan vaqti",
+      dataIndex: "time",
+      key: "time",
     },
     {
-      title: "Action",
+      title: "Tahrirlash",
       key: "action",
       render: (_, record) => (
         <Space>
@@ -115,6 +119,7 @@ const index = () => {
       ),
     },
   ];
+
   return (
     <div className="courses">
       <div className="main__up2">
@@ -141,36 +146,42 @@ const index = () => {
         </button>
       </div>
 
-      <div>
-        <Table
-          columns={columns}
-          dataSource={data}
-          pagination={false}
-          rowKey={(record) => record.phone}
-        />
+      <Table
+        columns={columns}
+        dataSource={data}
+        pagination={false}
+        rowKey={(record) => record.about}
+      />
+      <Modal
+        title="Tahrirlash"
+        visible={editModalVisible}
+        onCancel={() => setEditModalVisible(false)}
+      >
+        <Form layout="vertical">
+          <Form.Item label="Tartib raqami">
+            <Input value={order} onChange={(e) => setOrder(e.target.value)} />
+          </Form.Item>
+          <Form.Item label="Kurs haqida">
+            <Input value={about} onChange={(e) => setAbout(e.target.value)} />
+          </Form.Item>
+          <Form.Item label="Kurs nomi">
+            <Input value={name} onChange={(e) => setName(e.target.value)} />
+          </Form.Item>
+          <Form.Item label="Rasm linki">
+            <Input
+              value={imageLink}
+              onChange={(e) => setimageLink(e.target.value)}
+            />
+          </Form.Item>
 
-        <Modal
-          title="Edit Entry"
-          visible={editModalVisible}
-          onOk={handleSave}
-          onCancel={() => setEditModalVisible(false)}
-        >
-          <Form layout="vertical">
-            <Form.Item label="Name">
-              <Input value={name} onChange={(e) => setName(e.target.value)} />
-            </Form.Item>
-            <Form.Item label="Surname">
-              <Input
-                value={surname}
-                onChange={(e) => setSurname(e.target.value)}
-              />
-            </Form.Item>
-            <Form.Item label="Phone Number">
-              <Input value={phone} onChange={(e) => setPhone(e.target.value)} />
-            </Form.Item>
-          </Form>
-        </Modal>
-      </div>
+          <button
+            className="px-4 py-1 rounded-[15px] border-[1px] border-[#00000034]"
+            onClick={() => handleSave()}
+          >
+            O'zgartirish
+          </button>
+        </Form>
+      </Modal>
 
       <Modal
         title="Basic Modal"
@@ -178,25 +189,29 @@ const index = () => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <Space direction="vertical" style={{ marginBottom: 16 }}>
+        <Space direction="vertical" style={{ marginBottom: 16, width: "100%" }}>
           <Input
-            placeholder="Name"
+            placeholder="Tartib raqami"
+            value={order}
+            onChange={(e) => setOrder(e.target.value)}
+          />
+
+          <Input
+            placeholder="Kurs nomi"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <Input
-            placeholder="Surname"
-            value={surname}
-            onChange={(e) => setSurname(e.target.value)}
+            placeholder="Kurs haqida"
+            value={about}
+            onChange={(e) => setAbout(e.target.value)}
           />
           <Input
-            placeholder="Phone Number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            placeholder="Rasm linki"
+            value={imageLink}
+            onChange={(e) => setimageLink(e.target.value)}
           />
-          <Button type="dashed" onClick={handleAdd}>
-            Add
-          </Button>
+          <Button onClick={handleAdd}>Add</Button>
         </Space>
       </Modal>
     </div>
