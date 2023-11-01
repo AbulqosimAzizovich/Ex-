@@ -1,22 +1,50 @@
 import React from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
-import { Breadcrumb } from "antd";
+import { Breadcrumb, Button, Dropdown } from "antd";
 import "./style.scss";
+
+const items = [
+  {
+    key: "1",
+    label: (
+      <div className="flex items-center gap-1">
+        <i className="bx bx-cog text-[20px] "></i>
+        <p>Sozlamalar</p>
+      </div>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <div className="flex items-center gap-1">
+        <i className="bx bx-log-out text-[20px] "></i>
+        <p>Chiqish</p>
+      </div>
+    ),
+  },
+];
 
 const index = () => {
   return (
     <div className="ssss">
       <header className="flex items-center justify-between h-[80px] px-[50px] head">
         <a href="#">Logo</a>
-
-        <div className="flex items-center gap-5 login">
-          <button className="flex items-center">
-            <i className="bx bx-menu text-[30px]"></i>
-          </button>
-          <div className="flex items-center gap-1 user">
-            <i className="bx bxs-user-circle text-[30px]"></i>
-            <p>User Name</p>
-          </div>
+        <div className="flex items-center gap-2">
+          <i className="bx bx-menu text-[30px] hover:bg-[#0000001f] hover:rounded-[5px] p-[2px] cursor-pointer"></i>
+          <Dropdown
+            menu={{
+              items,
+            }}
+            placement="bottomRight"
+            arrow
+          >
+            <Button type="text" className="flex items-center gap-5 login p-1">
+              <div className="flex items-center gap-1 user">
+                <i className="bx bxs-user-circle text-[30px]"></i>
+                <p>User Name</p>
+              </div>
+            </Button>
+          </Dropdown>
         </div>
       </header>
 
