@@ -1,0 +1,13 @@
+.buyurtmachilar {
+  overflow: hidden;
+  padding: 10px 15px;
+  .main__up {
+    background: #ffffff;
+    margin: 30px auto;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
