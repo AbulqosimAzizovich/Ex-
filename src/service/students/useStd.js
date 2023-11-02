@@ -9,6 +9,7 @@ const useStd = {
   createStudent: (data) => api.post("/user/register", data, { headers }),
   getStudent: () => api.get("/student/get-all", { headers }),
   getOneStudent: (id) => api.get(`/student/${id}`),
+  editStudent: () => api.put(`/student/update-status/${id}`),
 };
 
 export default useStd;

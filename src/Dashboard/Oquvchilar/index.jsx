@@ -6,6 +6,7 @@ import "./style.scss";
 
 const handleChange = (value) => {
   console.log(value);
+  
 };
 const index = () => {
   const [current, setCurrent] = useState([]);
@@ -110,13 +111,17 @@ const index = () => {
                             <td className="px-6 py-4">{e.updatedAt}</td>
                             <td className="px-6 py-4">
                               {e?.status == 3 ? (
-                                <><p className="text-red-500">O'qimaydi</p></>
+                                <>
+                                  <p className="text-red-500">O'qimaydi</p>
+                                </>
                               ) : e?.status == 2 ? (
-                                <><p className="text-green-500">O'qiydi</p></>
+                                <>
+                                  <p className="text-green-500">O'qiydi</p>
+                                </>
                               ) : (
                                 <>
                                   <p className="text-gray-700">
-                                    Ko'rib chiqimoqda
+                                    Ko'rib chiqilmoqda
                                   </p>
                                 </>
                               )}
