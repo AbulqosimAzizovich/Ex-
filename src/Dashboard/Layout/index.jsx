@@ -24,7 +24,7 @@ const items = [
     label: (
       <Link
         className="flex items-center gap-1"
-        to="/login"
+        to="/"
         onClick={() => removeToken()}
       >
         <i className="bx bx-log-out text-[20px] "></i>

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Space, Table, Tag, Breadcrumb } from "antd";
-
-import "./style.scss";
+import useCustomers from "../../service/buyurtmachilar";
 import moment from "moment";
+import "./style.scss";
 
 const { Column, ColumnGroup } = Table;
 const data = [
@@ -33,6 +33,27 @@ const data = [
   },
 ];
 const index = () => {
+  const [current, setCurrent] = useState([]);
+
+  const Customers = () => {
+    useCustomers
+      .getCustomers()
+      .then((res) => {
+        if (res.status === 200) {
+          setCurrent(res?.data?.users);
+        }
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  };
+
+  useEffect(() => {
+    Customers();
+  }, []);
+
+  const token = localStorage.getItem("token");
+
   return (
     <div className="buyurtmachilar">
       <div className="main__up">
@@ -56,13 +77,81 @@ const index = () => {
         />
       </div>
 
-      <Table dataSource={data}>
-        <Column title="#" dataIndex="number" key="number" />
-        <Column title="F.I.SH" dataIndex="fish" key="fish" />
-        <Column title="Telefon" dataIndex="telephone" key="telephone" />
-        <Column title="Xizmat" dataIndex="address" key="address" />
-        <Column title="Yaratilgan vaqti" dataIndex="time" key="time" />
-      </Table>
+      <div class="relative overflow-x-auto">
+        {token ? (
+          <>
+            {" "}
+            <table class="w-full text-sm text-left text-gray-500 ">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    #
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    F.I.Sh
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Telefon
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Xizmat
+                  </th>
+
+                  <th scope="col" class="px-6 py-3">
+                    Ro'yxatdan o'tgan vaqti
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {current.length &&
+                  current.map((e, index) => {
+                    return (
+                      <>
+                        <tr class="bg-white border-b">
+                          <th
+                            scope="row"
+                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                          >
+                            {index + 1}
+                          </th>
+                          <td class="px-6 py-4">{e?.fullName}</td>
+                          <td class="px-6 py-4">{e?.phoneNumber}</td>
+                          <td class="px-6 py-4">{e?.serviceId?.title}</td>
+                          <td class="px-6 py-4">{e?.createdAt}</td>
+                        </tr>
+                      </>
+                    );
+                  })}
+              </tbody>
+            </table>
+          </>
+        ) : (
+          <>
+            <table class="w-full text-sm text-left text-gray-500 ">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    #
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    F.I.Sh
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Telefon
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Xizmat
+                  </th>
+
+                  <th scope="col" class="px-6 py-3">
+                    Ro'yxatdan o'tgan vaqti
+                  </th>
+                </tr>
+              </thead>
+            </table>
+          </>
+        )}
+      </div>
     </div>
   );
 };

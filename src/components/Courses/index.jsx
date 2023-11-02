@@ -5,6 +5,7 @@ import "./style.scss";
 
 const index = () => {
   const [current, setCurrent] = useState([]);
+
   const courses = () => {
     useCourse
       .getCourse()
@@ -20,6 +21,8 @@ const index = () => {
   useEffect(() => {
     courses();
   }, []);
+
+  console.log(current);
   return (
     <div className="course" id="course">
       <div className="container">

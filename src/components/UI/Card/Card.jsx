@@ -1,5 +1,5 @@
-import { Button, Modal } from "antd";
 import { useState } from "react";
+import { Button, Modal } from "antd";
 import useCourse from "../../../service/course/useCourse";
 import "./style.scss";
 
@@ -14,6 +14,12 @@ const Card = ({ title, desc, image }) => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  console.log(fullName, phoneNumber);
+
   return (
     <>
       <div className="card relative">
@@ -73,6 +79,8 @@ const Card = ({ title, desc, image }) => {
               Ism familiya
             </label>
             <input
+              onChange={(e) => setFullName(e.target.value)}
+              value={fullName}
               type="text"
               id="first_name"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
@@ -89,6 +97,8 @@ const Card = ({ title, desc, image }) => {
               Telefon
             </label>
             <input
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={phoneNumber}
               type="tel"
               id="password"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"

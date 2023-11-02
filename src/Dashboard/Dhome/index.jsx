@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Breadcrumb } from "antd";
-import useStd from "../../service/students/useStd";
+import useDhome from "../../service/dhome";
 import "./style.scss";
 
 const index = () => {
+  const [current, setCurrent] = useState([]);
+  const [course, setCourse] = useState([]);
 
-  const [student, setStudent] = useState([]);
-  const [buyurtmachilar, setBuyurtmachilar] = useState([]);
-  const [xizmatlar, setXizmatlar] = useState([]);
-  const [kurslar, setKurslar] = useState([]);
-
-  const std = () => {
-    useStd
-      .getStudent()
+  const dHome = () => {
+    useDhome
+      .getDhome()
       .then((res) => {
         if (res.status === 200) {
-          setCurrent(res?.data);
+          setCurrent(res?.data?.summary);
         }
       })
       .catch((e) => {
@@ -25,10 +22,11 @@ const index = () => {
   };
 
   useEffect(() => {
-    std();
+    dHome();
   }, []);
 
-  console.log(student);
+  console.log(current);
+
   return (
     <>
       <div className="ssss1">
@@ -51,7 +49,7 @@ const index = () => {
               <h3>O'quvchilar</h3>
 
               <div className="count card1">
-                <p>1</p>
+                <p>{current?.student?.total}</p>
                 <i className="bx bxs-user-rectangle"></i>
               </div>
             </div>
@@ -60,7 +58,7 @@ const index = () => {
               <h3>Yangi o'quvchilar</h3>
 
               <div className="count card2">
-                <p>1</p>
+                <p>{current?.student?.new}</p>
                 <i className="bx bx-user-check"></i>
               </div>
             </div>
@@ -69,7 +67,7 @@ const index = () => {
               <h3>O'qiydiganlar</h3>
 
               <div className="count card3">
-                <p>1</p>
+                <p>{current?.student?.resolve}</p>
                 <i className="bx bxs-user-check"></i>
               </div>
             </div>
@@ -78,7 +76,7 @@ const index = () => {
               <h3>O'qimaydiganlar</h3>
 
               <div className="count card4">
-                <p>1</p>
+                <p>{current?.student?.resolve}</p>
                 <i className="bx bxs-user-x"></i>
               </div>
             </div>
@@ -87,7 +85,7 @@ const index = () => {
               <h3>Buyurtmachilar</h3>
 
               <div className="count card5">
-                <p>1</p>
+                <p>{current?.user?.total}</p>
                 <i className="bx bx-child"></i>
               </div>
             </div>
@@ -96,7 +94,7 @@ const index = () => {
               <h3>Xizmatlar</h3>
 
               <div className="count card6">
-                <p>1</p>
+                <p>{current?.service?.total}</p>
                 <i className="bx bx-taxi"></i>
               </div>
             </div>
@@ -105,7 +103,7 @@ const index = () => {
               <h3>Kurslar</h3>
 
               <div className="count card7">
-                <p>1</p>
+                <p>{current?.course?.total}</p>
                 <i className="bx bxs-book-open"></i>
               </div>
             </div>

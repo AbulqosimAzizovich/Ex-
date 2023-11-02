@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Button, Space, Input, Modal, Form, Breadcrumb } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import useCourse from "../../service/course/useCourse";
 import "./style.scss";
 
 const index = () => {
+  const [current, setCurrent] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
+  const allCourses = () => {
+    useCourse
+      .getCourse()
+      .then((res) => {
+        if (res.status === 200) {
+          setCurrent(res?.data?.courses);
+        }
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  };
+
+  useEffect(() => {
+    allCourses();
+  }, []);
+
+  console.log(current);
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -16,6 +37,17 @@ const index = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  const showModal1 = () => {
+    setIsModalOpen1(true);
+  };
+  const handleOk1 = () => {
+    setIsModalOpen1(false);
+  };
+  const handleCancel1 = () => {
+    setIsModalOpen1(false);
+  };
+
   const [data, setData] = useState([]);
   const [order, setOrder] = useState("");
   const [about, setAbout] = useState("");
@@ -35,6 +67,7 @@ const index = () => {
         time: moment().format("YYYY-MM-DD HH:mm:ss"),
       },
     ];
+
     setData(newData);
     setOrder("");
     setAbout("");
@@ -119,6 +152,7 @@ const index = () => {
       ),
     },
   ];
+  const token = localStorage.getItem("token");
 
   return (
     <div className="courses">
@@ -145,17 +179,97 @@ const index = () => {
           <i className="bx bx-plus-circle text-[32px] text-[#287c36] hover:text-[#4dff6b]"></i>
         </button>
       </div>
-
-      <Table
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-        rowKey={(record) => record.about}
-      />
+      <div className="relative overflow-x-auto">
+        {token ? (
+          <>
+            <table className="w-full text-sm text-left text-gray-500 ">
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
+                <tr>
+                  <th scope="col" className="px-6 py-3">
+                    #
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Kurs Id
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Kurs nomi
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    O'quvchilar soni
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Yaratilgan vaqti
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Tahrirlash
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {current.length &&
+                  current.map((e, index) => {
+                    return (
+                      <>
+                        <tr className="bg-white border-b">
+                          <th
+                            scope="row"
+                            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                          >
+                            {index + 1}
+                          </th>
+                          <td className="px-6 py-4">{e._id}</td>
+                          <td className="px-6 py-4">{e.title}</td>
+                          <td className="px-6 py-4">{e.students.length}</td>
+                          <td className="px-6 py-4">{e.updatedAt}</td>
+                          <td className="px-6 py-4">
+                            <button
+                              onClick={showModal1}
+                              className="text-[24px] text-white bg-yellow-500 p-2 rounded-lg"
+                            >
+                              <i className="bx bxs-edit"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </>
+                    );
+                  })}
+              </tbody>
+            </table>
+          </>
+        ) : (
+          <>
+            <table className="w-full text-sm text-left text-gray-500 ">
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
+                <tr>
+                  <th scope="col" className="px-6 py-3">
+                    #
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Kurs Id
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Kurs nomi
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    O'quvchilar soni
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Yaratilgan vaqti
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Tahrirlash
+                  </th>
+                </tr>
+              </thead>
+            </table>
+          </>
+        )}
+      </div>
       <Modal
         title="Tahrirlash"
-        visible={editModalVisible}
-        onCancel={() => setEditModalVisible(false)}
+        open={isModalOpen1}
+        onOk={handleOk1}
+        onCancel={handleCancel1}
       >
         <Form layout="vertical">
           <Form.Item label="Tartib raqami">
@@ -190,12 +304,6 @@ const index = () => {
         onCancel={handleCancel}
       >
         <Space direction="vertical" style={{ marginBottom: 16, width: "100%" }}>
-          <Input
-            placeholder="Tartib raqami"
-            value={order}
-            onChange={(e) => setOrder(e.target.value)}
-          />
-
           <Input
             placeholder="Kurs nomi"
             value={name}

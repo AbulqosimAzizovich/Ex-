@@ -94,7 +94,7 @@ const index = () => {
                 </thead>
                 <tbody>
                   {current.length &&
-                    current.map((e) => {
+                    current.map((e, index) => {
                       return (
                         <>
                           <tr className="bg-white border-b">
@@ -102,7 +102,7 @@ const index = () => {
                               scope="row"
                               className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                             >
-                              {e._id}
+                              {index + 1}
                             </th>
                             <td className="px-6 py-4">{e.fullName}</td>
                             <td className="px-6 py-4">{e.phoneNumber}</td>

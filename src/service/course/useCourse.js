@@ -7,6 +7,7 @@ const headers = {
 
 const useCourse = {
   getCourse: () => api.get("/course", { headers }),
+  createCourse: (data) => api.post("/course", data, { headers }),
 };
 
 export default useCourse;
