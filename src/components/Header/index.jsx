@@ -12,12 +12,12 @@ const index = () => {
           <div className="navbar_info">
             <ul className="navbar_info_list">
               <li>
-                <a href="#" className="navbar_info_list_item">
+                <a href="#course" className="navbar_info_list_item">
                   Courses
                 </a>
               </li>
               <li>
-                <a href="#" className="navbar_info_list_item">
+                <a href="#services" className="navbar_info_list_item">
                   Services
                 </a>
               </li>

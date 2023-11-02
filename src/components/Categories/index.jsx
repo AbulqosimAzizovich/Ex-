@@ -20,14 +20,14 @@ const index = () => {
           12,000+ unique online course list designs
         </p>
         <div className="flex">
-          <div className="card2 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px]d hover:shadow-xl">
+          <div className="card2 w-[253px]  inline-block items-center justify-center border mx-auto rounded-[20px] shadow-md bg-white mb-[155px] hover:shadow-xl">
             <img
               src={img1}
               alt="img"
               className="mt-[37px] mb-[50px] mx-[82px]"
             />
             <h2 className="text-[#324361] text-[25px] font-semibold max-w-[155px] text-center mb-[45px] mx-[49px]">
-              Digtal Marketing
+              Web Development
             </h2>
             <p className="text-center text-[#4F547B] text-[18px] font-medium">
               16 Courses

@@ -16,10 +16,10 @@ const items = [
   {
     key: "2",
     label: (
-      <div className="flex items-center gap-1">
+      <Link className="flex items-center gap-1" to='/login'>
         <i className="bx bx-log-out text-[20px] "></i>
         <p>Chiqish</p>
-      </div>
+      </Link>
     ),
   },
 ];

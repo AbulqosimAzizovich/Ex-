@@ -46,8 +46,9 @@
     .service_cards {
       display: flex;
       margin-top: 30px;
-      // justify-content: space-between;
-      gap: 65px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
       .card1 {
         overflow: hidden;
         border-radius: 20px;
