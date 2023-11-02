@@ -10,6 +10,7 @@ import Kurs from "../Dashboard/Kurslar";
 import Buyurtmachilar from "../Dashboard/Buyurtmachilar";
 import Xizmatlar from "../Dashboard/Xizmatlar";
 import NotFound from "../pages/NotFound";
+import Login from "../Dashboard/auth/Login1";
 
 const router = createBrowserRouter([
   {
@@ -44,12 +45,17 @@ const router = createBrowserRouter([
         path: "/dashboard/buyurtmachilar",
         element: <Buyurtmachilar />,
       },
-
       {
         path: "/dashboard/xizmatlar",
         element: <Xizmatlar />,
       },
     ],
+  },
+
+  {
+    path: "login",
+    element: <Login />,
+    errorElement: <NotFound />,
   },
 ]);
 
