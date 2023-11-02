@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Breadcrumb } from "antd";
+import useStd from "../../service/students/useStd";
 import "./style.scss";
 
 const index = () => {
+
+  const [student, setStudent] = useState([]);
+  const [buyurtmachilar, setBuyurtmachilar] = useState([]);
+  const [xizmatlar, setXizmatlar] = useState([]);
+  const [kurslar, setKurslar] = useState([]);
+
+  const std = () => {
+    useStd
+      .getStudent()
+      .then((res) => {
+        if (res.status === 200) {
+          setCurrent(res?.data);
+        }
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  };
+
+  useEffect(() => {
+    std();
+  }, []);
+
+  console.log(student);
   return (
     <>
       <div className="ssss1">

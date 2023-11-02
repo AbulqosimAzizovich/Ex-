@@ -10,7 +10,8 @@ import Kurs from "../Dashboard/Kurslar";
 import Buyurtmachilar from "../Dashboard/Buyurtmachilar";
 import Xizmatlar from "../Dashboard/Xizmatlar";
 import NotFound from "../pages/NotFound";
-import Login from "../Dashboard/auth/Login1";
+import Login from "../pages/auth/Login1";
+console.log(localStorage.getItem("token"));
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/dashboard",
     element: <Layout1 />,

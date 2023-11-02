@@ -20,7 +20,6 @@ const index = () => {
   useEffect(() => {
     courses();
   }, []);
-  console.log(current);
   return (
     <div className="course" id="course">
       <div className="container">

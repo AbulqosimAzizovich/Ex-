@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
 import { Breadcrumb, Button, Dropdown } from "antd";
 import "./style.scss";
+
+function removeToken() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("username");
+  localStorage.removeItem("password");
+}
 
 const items = [
   {
@@ -16,7 +22,11 @@ const items = [
   {
     key: "2",
     label: (
-      <Link className="flex items-center gap-1" to='/login'>
+      <Link
+        className="flex items-center gap-1"
+        to="/login"
+        onClick={() => removeToken()}
+      >
         <i className="bx bx-log-out text-[20px] "></i>
         <p>Chiqish</p>
       </Link>
@@ -25,6 +35,8 @@ const items = [
 ];
 
 const index = () => {
+  const user = localStorage.getItem("username");
+
   return (
     <div className="ssss">
       <header className="flex items-center justify-between h-[80px] px-[50px] head">
@@ -41,7 +53,7 @@ const index = () => {
             <Button type="text" className="flex items-center gap-5 login p-1">
               <div className="flex items-center gap-1 user">
                 <i className="bx bxs-user-circle text-[30px]"></i>
-                <p>User Name</p>
+                <p>{user ? `${user}` : "User Name"}</p>
               </div>
             </Button>
           </Dropdown>

@@ -20,7 +20,7 @@ const Card = ({ title, desc, image }) => {
         <img
           src={image}
           alt="Image"
-          className=" rounded-t-[20px] bg-contain z-0 w-[511px] h-[314px]"
+          className=" rounded-t-[20px] bg-contain z-0 object-cover"
           onClick={showModal}
         />
 

@@ -1,126 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Breadcrumb, Space, Table, Tag, Modal, Select } from "antd";
 import { Link } from "react-router-dom";
+import useStd from "../../service/students/useStd";
 import "./style.scss";
 
-// const columns = [
-//   {
-//     title: "#",
-//     dataIndex: "number",
-//     key: "number",
-//   },
-//   {
-//     title: "F.I.Sh",
-//     dataIndex: "fish",
-//     key: "fish",
-//   },
-//   {
-//     title: "Telefon",
-//     dataIndex: "telefon",
-//     key: "telefon",
-//   },
-//   {
-//     title: "Kurs",
-//     dataIndex: "kurs",
-//     key: "kurs",
-//   },
-//   {
-//     title: "Ro'yxatdan o'tgan vaqt",
-//     dataIndex: "register",
-//     key: "register",
-//   },
-//   {
-//     title: "Holat",
-//     dataIndex: "holat",
-//     key: "x",
-//     render: () => <a>Active</a>,
-//   },
-//   {
-//     title: "Tahrirlash",
-//     dataIndex: "",
-//     key: "x",
-//     render: () => <a onClick={showModal}>Edit</a>,
-//   },
-// ];
-
 const handleChange = (value) => {
-  console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
+  console.log(value);
 };
-const data = [
-  {
-    key: 1,
-    number: 1,
-    fish: "Tohirova Shirin",
-    telefon: "+998900666571",
-    kurs: "Bootcamp Fountdation",
-    register: "10.10.2023",
-  },
-  {
-    key: 2,
-    number: 2,
-    fish: "John Doe",
-    telefon: "+998200026639",
-    kurs: "Bootcamp Fountdation",
-    register: "10.10.2023",
-  },
-  {
-    key: 3,
-    number: 3,
-    fish: "Elon Musk",
-    telefon: "+998930016639",
-    kurs: "Bootcamp Fountdation",
-    register: "10.10.2023",
-  },
-  {
-    key: 4,
-    number: 4,
-    fish: "George Sting",
-    telefon: "+998993086639",
-    kurs: "Bootcamp Fountdation",
-    register: "10.10.2023",
-  },
-];
-
 const index = () => {
-  const columns = [
-    {
-      title: "#",
-      dataIndex: "number",
-      key: "number",
-    },
-    {
-      title: "F.I.Sh",
-      dataIndex: "fish",
-      key: "fish",
-    },
-    {
-      title: "Telefon",
-      dataIndex: "telefon",
-      key: "telefon",
-    },
-    {
-      title: "Kurs",
-      dataIndex: "kurs",
-      key: "kurs",
-    },
-    {
-      title: "Ro'yxatdan o'tgan vaqt",
-      dataIndex: "register",
-      key: "register",
-    },
-    {
-      title: "Holat",
-      dataIndex: "holat",
-      key: "x",
-      render: () => <a>Active</a>,
-    },
-    {
-      title: "Tahrirlash",
-      dataIndex: "",
-      key: "x",
-      render: () => <a onClick={showModal}>Edit</a>,
-    },
-  ];
+  const [current, setCurrent] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -132,6 +20,24 @@ const index = () => {
     setIsModalOpen(false);
   };
 
+  const students = () => {
+    useStd
+      .getStudent()
+      .then((res) => {
+        if (res.status === 200) {
+          setCurrent(res?.data?.students);
+        }
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  };
+  useEffect(() => {
+    students();
+  }, []);
+  console.log(current);
+
+  const token = localStorage.getItem("token");
   return (
     <div className="std">
       <div className="main__up">
@@ -155,9 +61,107 @@ const index = () => {
         />
       </div>
 
-      <div className="table">
-        <Table columns={columns} dataSource={data} />
-      </div>
+      {token ? (
+        <>
+          <div className="table">
+            <div className="relative">
+              <table className="w-full text-sm text-left text-gray-500 h-screen overflow-y-scroll">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                  <tr>
+                    <th scope="col" className="px-6 py-3">
+                      #
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      F.I.Sh
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Telefon
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Kurs
+                    </th>
+
+                    <th scope="col" className="px-6 py-3">
+                      Ro'yxatdan o'tgan vaqti
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Holati
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Tahrirlash
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {current.length &&
+                    current.map((e) => {
+                      return (
+                        <>
+                          <tr className="bg-white border-b">
+                            <th
+                              scope="row"
+                              className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                            >
+                              {e._id}
+                            </th>
+                            <td className="px-6 py-4">{e.fullName}</td>
+                            <td className="px-6 py-4">{e.phoneNumber}</td>
+                            <td className="px-6 py-4">{e.courseId.title}</td>
+                            <td className="px-6 py-4">{e.updatedAt}</td>
+                            <td className="px-6 py-4">Active</td>
+                            <td className="px-6 py-4">
+                              <button
+                                onClick={showModal}
+                                className="text-[24px] text-white bg-yellow-500 p-2 rounded-lg"
+                              >
+                                <i className="bx bxs-edit"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </>
+                      );
+                    })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="table">
+            <div className="relative">
+              <table className="w-full text-sm text-left text-gray-500 overflow-y-scroll">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                  <tr>
+                    <th scope="col" className="px-6 py-3">
+                      #
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      F.I.Sh
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Telefon
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Kurs
+                    </th>
+
+                    <th scope="col" className="px-6 py-3">
+                      Ro'yxatdan o'tgan vaqti
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Holati
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Tahrirlash
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </>
+      )}
 
       <Modal
         title="O'quvchi Statusini o'zgartirish"
@@ -189,7 +193,10 @@ const index = () => {
             },
           ]}
         />
-        <button className="p-2 text-[32px] rounded-md" onClick={() => handleOk()}>
+        <button
+          className="p-2 text-[32px] rounded-md"
+          onClick={() => handleOk()}
+        >
           <i className="bx bxs-save text-[#286b28]"></i>
         </button>
       </Modal>
