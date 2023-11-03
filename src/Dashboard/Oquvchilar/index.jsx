@@ -6,7 +6,6 @@ import "./style.scss";
 
 const handleChange = (value) => {
   console.log(value);
-  
 };
 const index = () => {
   const [current, setCurrent] = useState([]);
@@ -14,7 +13,7 @@ const index = () => {
   const showModal = () => {
     setIsModalOpen(true);
   };
-  const handleOk = () => {
+  const handleOk = (selectedValue) => {
     setIsModalOpen(false);
   };
   const handleCancel = () => {
@@ -36,7 +35,7 @@ const index = () => {
   useEffect(() => {
     students();
   }, []);
-  console.log(current);
+  // console.log(current);
 
   const token = localStorage.getItem("token");
   return (

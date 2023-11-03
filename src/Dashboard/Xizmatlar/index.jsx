@@ -39,15 +39,15 @@ const index = () => {
     setIsModalOpen(false);
   };
 
-   const showModal1 = () => {
-     setIsModalOpen1(true);
-   };
-   const handleOk1 = () => {
-     setIsModalOpen1(false);
-   };
-   const handleCancel1 = () => {
-     setIsModalOpen1(false);
-   };
+  const showModal1 = () => {
+    setIsModalOpen1(true);
+  };
+  const handleOk1 = () => {
+    setIsModalOpen1(false);
+  };
+  const handleCancel1 = () => {
+    setIsModalOpen1(false);
+  };
   const [data, setData] = useState([]);
   const [order, setOrder] = useState("");
   const [about, setAbout] = useState("");
