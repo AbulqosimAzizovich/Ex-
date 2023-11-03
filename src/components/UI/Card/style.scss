@@ -14,7 +14,9 @@
   }
   .about__card {
     padding: 24px 30px;
-
+    img {
+      object-fit:contain;
+    }
     .title__card--about {
       display: flex;
       justify-content: space-between;
